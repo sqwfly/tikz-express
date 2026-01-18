@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>node-tikzjax demo</title>
+  </head>
+  <body>
+    <textarea id="tikzjax-input" style="width: 100%; height: 200px">
+\begin{document}
+\begin{tikzpicture}[domain=0:4]
+  \draw[very thin,color=gray] (-0.1,-1.1) grid (3.9,3.9);
+  \draw[->] (-0.2,0) -- (4.2,0) node[right] {$x$};
+  \draw[->] (0,-1.2) -- (0,4.2) node[above] {$f(x)$};
+  \draw[color=red]    plot (\x,\x)             node[right] {$f(x) =x$};
+  \draw[color=blue]   plot (\x,{sin(\x r)})    node[right] {$f(x) = \sin x$};
+  \draw[color=orange] plot (\x,{0.05*exp(\x)}) node[right] {$f(x) = \frac{1}{20} \mathrm e^x$};
+\end{tikzpicture}
+\end{document}
+    </textarea>
+    <button id="tikzjax-submit">Submit</button>
+    <div id="tikzjax-output" style="width: 100%; height: 200px"></div>
+    <script>
+      document
+        .getElementById('tikzjax-submit')
+        .addEventListener('click', async function () {
+          const input = document.getElementById('tikzjax-input').value;
+          const output = document.getElementById('tikzjax-output');
+
+          output.innerHTML = 'Loading...';
+
+          try {
+            const response = await fetch('/api/render', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ input: input }),
+            });
+
+            // 检查响应状态
+            if (!response.ok) {
+              const errorData = await response.json();
+              throw new Error(errorData.message || '请求失败');
+            }
+
+            // 获取 SVG 文本内容
+            const svgText = await response.text();
+            
+            // 直接设置 SVG 内容到页面
+            output.innerHTML = svgText;
+            
+          } catch (error) {
+            console.error('错误:', error);
+            output.innerHTML = `<div style="color: red;">错误: ${error.message}</div>`;
+          }
+        });
+    </script>
+  </body>
+</html>
