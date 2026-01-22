@@ -88,12 +88,12 @@ app.get('/api/doc', (req, res) => {
     message: 'TikZ 渲染服务已启动',
     endpoints: {
       render: {
-        POST: 'crender',
+        POST: '/api/render',
       },
-      health: '/tikz/healthz',
-      example: '/tikz/example'
+      health: '/api/healthz',
+      example: '/api/example'
     },
-    usage: '发送 POST 请求到 /，body: { "input": "你的 TikZ 代码" }'
+    usage: '发送 POST 请求到 /api/render，body: { "input": "你的 TikZ 代码" }'
   })
 })
 
