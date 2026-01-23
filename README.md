@@ -8,7 +8,7 @@
 
 将本仓库一键部署到 Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/Einstein-schrodinger/tikz-express&project-name=tikz-express&repository-name=tikz-express)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/sqwfly/tikz-express&project-name=tikz-express&repository-name=tikz-express)
 
 ## 本地运行测试
 
@@ -17,7 +17,7 @@
 1. 克隆仓库到本地
 
 ```bash
-git clone https://github.com/Einstein-schrodinger/tikz-express
+git clone https://github.com/sqwfly/tikz-express
 ```
 2. 安装 Vercel CLI:
 
