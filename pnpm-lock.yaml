@@ -15,8 +15,8 @@ importers:
         specifier: ^4.18.2
         version: 4.21.2
       node-tikzjax:
-        specifier: ^1.0.3
-        version: 1.0.3
+        specifier: ^1.0.5
+        version: 1.0.5
     devDependencies:
       '@types/node':
         specifier: ^22.0.0
@@ -499,8 +499,8 @@ packages:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
     engines: {node: '>= 0.6'}
 
-  node-tikzjax@1.0.3:
-    resolution: {integrity: sha512-AfJpj8NPlefBth5bl8n/V82zOMJe+Y63M8uymZiq7g/Gnl9HIcid/65h4PolZA//6siq7iFhTW3OFB75vG4hYA==}
+  node-tikzjax@1.0.5:
+    resolution: {integrity: sha512-ULp5DwgGLm1TKaELPmiT8qRhD3tkvwamnYi1ZfMd75v5G87XhpU0z8XwyDVQ+mVY9YsKjCZjvMBnL5V7juPWYA==}
 
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
@@ -1251,7 +1251,7 @@ snapshots:
 
   negotiator@0.6.3: {}
 
-  node-tikzjax@1.0.3:
+  node-tikzjax@1.0.5:
     dependencies:
       '@prinsss/dvi2html': 0.0.1
       jsdom: 23.2.0
